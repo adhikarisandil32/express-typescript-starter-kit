@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "moduleResolution": "node",
+    "rootDir": "." /* builds from the root of the app */,
+    // "baseUrl": "./" /* soon to be depricated feature, because baseUrl no longer required to be set when using paths */,
+    "paths": {
+      "@root/*": ["./*"],
+      "@src/*": ["./src/*"]
+    },
+    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "resolveJsonModule": true,  /* to import json files as modules */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}
