@@ -17,5 +17,8 @@
     "resolveJsonModule": true /* to import json files as modules */,
     "noUnusedLocals": true,
     "noUnusedParameters": true
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true // to resolve incomplete es-imports with .js extension
   }
 }
