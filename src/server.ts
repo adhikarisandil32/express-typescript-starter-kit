@@ -1,16 +1,12 @@
-// ts-node-dev package doesn't support es6 imports and all, hence ditch and use tsx (for runtime only, doens't compile) instead without any tsconfigs and no need to worry about commonjs or es module imports.
-// for esm (ecmascript module) build, because tsc doesn't touch import paths, we have to make sure we import our modules with .js extensions as you can see on below config.js. and if jsons, import them with `with {type: 'json'} assertion`.
-// Read about a potential solution here for importing files without extensions here: https://github.com/adhikarisandil32/MY-NOTES/blob/main/ts-express-setup.md or https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html#path-rewriting-for-relative-paths.
-
-import { app } from "./app.js";
+import { app } from "./app";
 import http from "http";
-import { config } from "./config/config.js";
+import { config } from "./config/config";
 import chalk from "chalk";
-import { getNetworkIps } from "./utils/get-network-ips.js";
+import { getNetworkIps } from "./utils/get-network-ips";
 
 const server = http.createServer(app);
 
-const PORT = config.PORT;
+const PORT = config.appConfig.PORT ?? 3000;
 const NETWORK_ADDRESSES = getNetworkIps();
 
 server.listen(PORT, () => {
